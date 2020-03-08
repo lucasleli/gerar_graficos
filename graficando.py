@@ -6,6 +6,10 @@ import os.path
 import string
 
 x = np.arange(-2*pi, 2*pi, 0.1)
+
+# Todas as funções devem ser passadas nesta lista
+# As funções ainda são passadas de maneira estática, mas irei resolver isso
+# por meio de um arquivo externo.
 funcoes = [x, -x, x+2, -x+2, x-2, 2*x, -2*x, 2*x+2, -2*x-2, -3*x+2, x**2,
            -x**2, 2*x**2, x**2+1, x**2-1, x**2+3*x-2, -x**2-3*x+2, x**3,
            -x**3, log(x), 1/(sin(x)), exp(x), 1/(cos(x)),
@@ -14,6 +18,8 @@ alfabeto = list(string.ascii_lowercase)
 num_exercicio = 1
 i_alfabet = 0
 
+# Para cada função dentro da lista "funcoes" ele plota os gráficos
+# e salva dentro da devida pasta.
 for i in range(len(funcoes)):
     plt.grid(True)
     plt.plot(x, funcoes[i])
@@ -30,12 +36,14 @@ for i in range(len(funcoes)):
     plt.title(nome_arquivo)
     diretorio = "./Exercicio %i" % (num_exercicio)
 
+    # Verifica se o diretório existe, se não, ele cria um com o nome
+    # atual do exercicio EX: Exercicio 2
     if (not os.path.exists(diretorio)):
         Path.mkdir(Path(diretorio))
     plt.savefig(diretorio + "/" + nome_arquivo)
 
     plt.close()
-    print(i_alfabet)
+    print(nome_arquivo)
     if (i_alfabet == 25):
         i_alfabet = 0
         num_exercicio += 1
