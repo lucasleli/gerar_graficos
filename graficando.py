@@ -1,15 +1,15 @@
 import matplotlib.pyplot as plt
 from pathlib import Path
 import numpy as np
-import numpy.matlib
+from numpy import sin, cos, log, log10, exp, pi, tan
 import os.path
 import string
 
-x = np.arange(-2*np.pi, 2*np.pi, 0.1)
+x = np.arange(-2*pi, 2*pi, 0.1)
 funcoes = [x, -x, x+2, -x+2, x-2, 2*x, -2*x, 2*x+2, -2*x-2, -3*x+2, x**2,
            -x**2, 2*x**2, x**2+1, x**2-1, x**2+3*x-2, -x**2-3*x+2, x**3,
-           -x**3, np.log(x), 1/(np.sin(x)), np.exp(x), 1/(np.cos(x)),
-           np.tan(x), 1/np.tan(x), np.exp(1)**-x, np.log10(x)]
+           -x**3, log(x), 1/(sin(x)), exp(x), 1/(cos(x)),
+           tan(x), 1/tan(x), exp(1)**-x, log10(x)]
 alfabeto = list(string.ascii_lowercase)
 num_exercicio = 1
 i_alfabet = 0
