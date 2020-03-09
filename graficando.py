@@ -1,3 +1,7 @@
+# Nome: Lucas dos Santos Leli
+# RA: 1901497
+# Disciplina: Conceitos e Aplicações de Cálculo
+
 import matplotlib.pyplot as plt
 from pathlib import Path
 import numpy as np
